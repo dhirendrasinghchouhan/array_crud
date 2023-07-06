@@ -6,5 +6,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'crud';
+  title = 'CRUD OPERATIONS USING ARRAY';
+
+  employees = [
+    {
+      name: "Surender Singh",
+      designation: "Lead"
+    },
+    {
+      name: "Dhirendra Singh",
+      designation: "Senior Developer"
+    }, {
+      name: "Shubham Singh",
+      designation: "Developer"
+    }
+  ];
+
+  formObject: any = {};
+
+  addData() {
+    this.employees.push(this.formObject);
+    console.log(this.formObject);
+    this.formObject = {};
+  }
+
+  deleteData(i: number) {
+    this.employees.splice(i, 1);
+    console.log(i);
+
+  }
+
+
+  updateData(i: number) {
+
+  }
 }
